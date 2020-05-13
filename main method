@@ -1,0 +1,22 @@
+package hashing;
+import static hashing.ChainingLinkedList.*;
+import java.util.*; 
+import java.lang.*;
+public class hasing  {
+public static void main (String []ar){
+Scanner in=new Scanner(System.in);
+System.out.println("enter the String");
+String s=in.nextLine();
+s=s.replaceAll("[^A-Za-z]","");
+char []ch=s.toCharArray();
+ChainingLinkedList l=new ChainingLinkedList(ch.length);
+for(int i=0;i<ch.length;i++){
+add(ch[i]);
+}
+print();
+final_search();
+
+}
+
+
+}
