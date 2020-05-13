@@ -1,0 +1,216 @@
+package hashing;
+import java.util.*; 
+public class ChainingLinkedList {
+    static Scanner in=new Scanner(System.in);
+    static int maxsize;
+    static int size;
+  public static Node[]table;
+    public ChainingLinkedList(int tablesize){
+     table=new Node[tablesize];
+    size =0;
+    maxsize =tablesize;
+    }
+     public static int hashcode (char x ){
+        Character c = x; 
+        int i = c.hashCode(); 
+        return i;
+    }
+     public static int MyHash(char x){
+     int hashval=hashcode(x);
+     hashval%=table.length;
+     if (hashval<0){
+     hashval+=table.length;
+     }
+     return hashval;
+     }
+     public static void add(char x){
+     size ++;
+     int pos =MyHash(x);
+     Node pointer=new Node (x);
+     if ( pointer==null){
+     table [pos]=pointer;
+     }
+     else 
+        pointer.next= table [pos];
+        table [pos]=pointer;
+     }
+     public static void print (){
+     for(int i=0;i<table.length;i++){
+      if (table[i]==null)
+          continue;
+     System.out.print("cell"+(i+1)+": ");
+     Node n=table[i];
+     while (n!=null){
+     System.out.print(n.data+" ");
+     n=n.next;
+     }
+       System.out.println();
+     }
+}
+//   public static void search(){
+//       int max =0;
+//       int index=-1;
+//     int space[]=new int[table.length];
+//     char space2[]=new char[table.length];
+//   for(int i=0;i<table.length;i++){
+//     Node m=table[i];
+//   if (table[i]==null)
+//       continue;
+//   else
+//     while (m!=null){
+//         space2[i]=table[i].data;
+//         space[i]++;
+//         m=m.next;  
+//        
+//     }
+//   }
+//   for(int i=0;i<table.length;i++){
+//       if(space[i]==0||space2[i]==0)
+//           continue;
+//   System.out.println(space2[i]+" "+space[i]);
+//   }
+//             for(int i=0;i<52;i++){
+//              if (space[i]>max){
+//                 max=space[i]; 
+//                 index=i;
+//              }
+//   }     
+//                   System.out.println(space[index]);  
+//   }
+   public static void final_search(){   
+       int arr[]=new int [52];
+        char [] arr2={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+                      'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+       
+    for(int i=0;i<table.length;i++){
+
+     Node m=table[i];
+   if (table[i]==null)
+       continue;
+   else
+     while (m!=null){
+     if (m.data=='A')
+         arr[0]++;
+     else if (m.data=='B')
+         arr[1]++;
+     else if (m.data=='C')
+         arr[2]++;
+     else if (m.data=='D')
+         arr[3]++;
+     else if (m.data=='E')
+         arr[4]++;
+     else if (m.data=='F')
+         arr[5]++;
+     else if (m.data=='G')
+         arr[6]++;
+     else if (m.data=='H')
+         arr[7]++;
+     else if (m.data=='I')
+         arr[8]++;
+     else if (m.data=='J')
+         arr[9]++;
+     else if (m.data=='K')
+         arr[10]++;
+     else if (m.data=='L')
+         arr[11]++;
+     else if (m.data=='M')
+         arr[12]++;
+     else if (m.data=='N')
+         arr[13]++;
+     else if (m.data=='O')
+         arr[14]++;
+     else if (m.data=='P')
+         arr[15]++;
+     else if (m.data=='Q')
+         arr[16]++;
+     else if (m.data=='R')
+         arr[17]++;
+     else if (m.data=='S')
+         arr[18]++;
+     else if (m.data=='T')
+         arr[19]++;
+     else if (m.data=='U')
+         arr[20]++;
+     else if (m.data=='V')
+         arr[21]++;
+     else if (m.data=='W')
+         arr[22]++;
+     else if (m.data=='X')
+         arr[23]++;
+     else if (m.data=='Y')
+         arr[24]++;
+     else if (m.data=='Z')
+         arr[25]++;
+     else if (m.data=='a')
+         arr[26]++;
+     else if (m.data=='b')
+         arr[27]++;
+     else if (m.data=='c')
+         arr[28]++;
+     else if (m.data=='d')
+         arr[29]++;
+     else if (m.data=='e')
+         arr[30]++;
+     else if (m.data=='f')
+         arr[31]++;
+     else if (m.data=='g')
+         arr[32]++;
+     else if (m.data=='h')
+         arr[33]++;
+     else if (m.data=='i')
+         arr[34]++;
+     else if (m.data=='j')
+         arr[35]++;
+     else if (m.data=='k')
+         arr[36]++;
+     else if (m.data=='l')
+         arr[37]++;
+     else if (m.data=='m')
+         arr[38]++;
+     else if (m.data=='n')
+         arr[39]++;
+     else if (m.data=='o')
+         arr[40]++;
+     else if (m.data=='p')
+         arr[41]++;
+     else if (m.data=='q')
+         arr[42]++;
+     else if (m.data=='r')
+         arr[43]++;
+     else if (m.data=='s')
+         arr[44]++;
+     else if (m.data=='t')
+         arr[45]++;
+     else if (m.data=='u')
+         arr[46]++;
+     else if (m.data=='v')
+         arr[47]++;
+     else if (m.data=='w')
+         arr[48]++;
+     else if (m.data=='x')
+         arr[49]++;
+     else if (m.data=='y')
+         arr[50]++;
+     else if (m.data=='z')
+         arr[51]++;
+     m=m.next;
+     
+     }
+    }
+     for(int i=0;i<52;i++){
+         if (arr[i]==0)
+             continue;
+   System.out.println(arr2[i]+" "+arr[i]);
+   }
+    int max=0;
+    int index=-1;
+          for(int i=0;i<52;i++){
+              if (arr[i]>max){
+                 max=arr[i]; 
+                 index=i;
+              }
+   }
+           System.out.println("the final result is");
+           System.out.println(arr2[index]+" "+arr[index]);
+   }
+ }
